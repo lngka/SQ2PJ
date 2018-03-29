@@ -1,0 +1,14 @@
+body {
+    background-color: #a2d9ce;
+}
+
+#mainframe {
+    margin-top: 5vh;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

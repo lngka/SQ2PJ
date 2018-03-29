@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SQ2PJ</title>
+        <link rel="stylesheet" href="/public/lib/bootstrap.min.css">
+        <link rel="stylesheet" href="/public/css/master.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- START CONTAINER -->
+            <div id="mainframe" class="jumbotron col-md-6 mx-auto">
+                <img id="logo" src="/public/img/athena_logo.png" class="img-fluid" alt="Athena Logo">
+                <hr>
+                <form>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Deine Email teilen wir niemandem mit</small>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="userRZKennung" aria-describedby="emailHelp" placeholder="Enter RZKennung">
+                    <small id="RZKennungHelp" class="form-text text-muted">Die Kennung zum Digicampus</small>
+                  </div>
+                  <hr>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="daily">
+                    <label class="form-check-label" for="daily">Täglich</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="weekly">
+                    <label class="form-check-label" for="weekly">Wöchenlich</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="unsubcribe" disabled>
+                    <label class="form-check-label" for="unsubcribe">Nope</label>
+                  </div>
+                  <hr>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- END COINTAINER -->
+        </div>
+
+        <!-- dependencies -->
+        <script type="text/javascript" src="/public/lib/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="/public/lib/popper.min.js"></script>
+        <script type="text/javascript" src="/public/lib/"></script>
+        <!-- this JS -->
+        <script type="text/javascript" src="/public/js/root.js"></script>
+    </body>
+</html>
