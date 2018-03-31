@@ -12,26 +12,26 @@
             <div id="mainframe" class="jumbotron col-md-6 mx-auto">
                 <img id="logo" src="/public/img/athena_logo.png" class="img-fluid" alt="Athena Logo">
                 <hr>
-                <form>
+                <form action="/subscribe" method="post">
                   <div class="form-group">
-                    <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" name="userEmail" aria-describedby="emailHelp" placeholder="Email eingeben">
                     <small id="emailHelp" class="form-text text-muted">Deine Email teilen wir niemandem mit</small>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="userRZKennung" aria-describedby="emailHelp" placeholder="Enter RZKennung">
+                    <input type="text" class="form-control" name="userRZKennung" aria-describedby="rzkennungHelp" placeholder="RZKennung eingeben">
                     <small id="RZKennungHelp" class="form-text text-muted">Die Kennung zum Digicampus</small>
                   </div>
                   <hr>
                   <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="daily">
+                    <input type="checkbox" class="form-check-input" name="daily">
                     <label class="form-check-label" for="daily">Täglich</label>
                   </div>
                   <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="weekly">
+                    <input type="checkbox" class="form-check-input" name="weekly">
                     <label class="form-check-label" for="weekly">Wöchenlich</label>
                   </div>
                   <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="unsubcribe" disabled>
+                    <input type="checkbox" class="form-check-input" name="unsubcribe" disabled>
                     <label class="form-check-label" for="unsubcribe">Nope</label>
                   </div>
                   <hr>
@@ -45,7 +45,7 @@
         <!-- dependencies -->
         <script type="text/javascript" src="/public/lib/jquery-3.2.1.slim.min.js"></script>
         <script type="text/javascript" src="/public/lib/popper.min.js"></script>
-        <script type="text/javascript" src="/public/lib/"></script>
+        <script type="text/javascript" src="/public/lib/bootstrap.min.js"></script>
         <!-- this JS -->
         <script type="text/javascript" src="/public/js/root.js"></script>
     </body>

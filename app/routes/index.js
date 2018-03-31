@@ -4,8 +4,10 @@ each route is controlled by its own JS file
 */
 
 const path             = require("path");
-const root_route       = require("./root.js");
+const root       = require("./root.js");
+const subscibe = require("./subscibe.js")
 
 module.exports = function(app) {
-    root_route(app);
+    root(app);
+    subscibe(app);
 }

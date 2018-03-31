@@ -1,13 +1,21 @@
 "use strict";
-const express = require("express");
-const path    = require("path");
-const routes  = require(path.join(process.cwd(), "app", "routes", "index.js"));
+const express  = require("express");
+const path     = require("path");
+const mongoose = require("mongoose");
+const routes   = require(path.join(process.cwd(), "app", "routes", "index.js"));
 
 // Creating environment variables
 require("dotenv").config();
 
 // Creating main application object...
 const app     = express();
+
+// Connecting to database..
+mongoose.connect(process.env.MONGODB);
+
+// Parsing incoming form data
+app.use(express.json());
+app.use(express.urlencoded({"extended": true}));
 
 // Enable access to general resources folder...
 app.use("/public", express.static(path.join(process.cwd(), "public")));
