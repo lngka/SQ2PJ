@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var mySubscriptionSchema = new Schema({
-    "RZKennung": {
+    "rzkennung": {
         "type": String,
         "required": true
     },

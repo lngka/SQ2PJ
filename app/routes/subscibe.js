@@ -1,9 +1,11 @@
 "usetrict";
+/*
+* this route would be called by the subsciption form
+*/
+const SubscriptionsHandler = require("../controllers/subscriptionsHandler.js");
 
 module.exports = function (app) {
+    var handler = new SubscriptionsHandler();
     app.route("/subscribe")
-        .post(function(req, res) {
-            console.log(req.body);
-            res.send(req.body);
-        });
+        .post(handler.newSubscription);
 }
