@@ -6,7 +6,15 @@ const path = require("path");
 
 module.exports = function(app) {
     app.route("/admincp")
-        .get(function(req, res) {
-            res.status(200).sendFile(path.join(process.cwd(), "app", "views", "index.html"));
+        .get(checkAuthentication, function(req, res, err) {
+            res.render("dashboard", {"layout": "coreUI"});
         });
+}
+
+function checkAuthentication(req,res,next){
+    if(req.isAuthenticated()){
+        next();
+    } else{
+        res.redirect("/login");
+    }
 }

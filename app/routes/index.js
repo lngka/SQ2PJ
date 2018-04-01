@@ -7,8 +7,8 @@ const path     = require("path");
 const root     = require("./root.js");
 const subscibe = require("./subscibe.js");
 const admincp  = require("./admincp.js");
-const addadmin  = require("./addadmin.js");
-const login  = require("./login.js");
+const addadmin = require("./addadmin.js");
+const login    = require("./login.js");
 
 module.exports = function(app) {
     root(app);
