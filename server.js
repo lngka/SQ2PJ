@@ -4,6 +4,8 @@ const path       = require("path");
 const mongoose   = require("mongoose");
 const routes     = require(path.join(process.cwd(), "app", "routes", "index.js"));
 const handlebars = require("express-handlebars");
+const passport   = require("passport");
+const session    = require("express-session");
 
 // Creating environment variables
 require("dotenv").config();
@@ -27,11 +29,22 @@ app.use("/controllers", express.static(path.join(process.cwd(), "app", "controll
 app.set("view engine", "hbs");
 app.set("views", path.join(process.cwd(), "app/views"));//set view folder
 app.engine("hbs", handlebars({
-                    "extname": ".hbs",
-                    "layoutsDir": path.join(process.cwd(), "app/views/layouts"),
-                    "defaultLayout": "main"
-                  })
+        "extname": ".hbs",
+        "layoutsDir": path.join(process.cwd(), "app/views/layouts"),
+        "defaultLayout": "main"
+    })
 );
+
+// Setting up session (mainly to keep users logged in)
+app.use(session({
+    "secret": "secretStr1ngT0encryptC00kl3s",
+    "resave": false,
+    "saveUninitialized": false,
+}));
+
+// Setting up authentication
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Applying routing logic
 routes(app);

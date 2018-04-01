@@ -22,7 +22,8 @@ module.exports = function (passport) {
                 if (err)
                     return done(err, null);
                 if (result == false)
-                    return done(null, false);
+                    // function done is designed by passportJS
+                    return done(null, false, {"message": "Incorrect Password"});
                 else
                     return done(null, user);
             });
