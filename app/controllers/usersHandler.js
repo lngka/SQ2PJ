@@ -12,6 +12,8 @@ function usersHandler(req, res) {
     /*
     * Create new user object in database
     * if the username exists, informs
+    * @param req {Object} from expressJS generated request object
+    * @param res {Object} from expressJS generated response object
     */
     this.newUser = function(req, res) {
         var username  = req.body.username;
@@ -46,6 +48,25 @@ function usersHandler(req, res) {
                     });
                 });
             }
+        });
+    };
+    /*
+    * Check password
+    * @param username {String}
+    * @param password {String}
+    * @param callback {function} will be called with:
+    *   @callbackParam err {Error}
+    *   @callbackParam result {Boolean}
+    */
+    this.verifyPassword = function(username, password, callback) {
+        Users.findOne({"username": username}, function(err, user) {
+            if (err)   return callback(err, null);
+            if (!user) return callback(new Error("Username not found!"), null);
+
+            bcrypt.conpare(password, user.hashedPassword, function(err, result) {
+                if (err) return callback(err, null);
+                else return callback(null, result);
+            });
         });
     };
 }
