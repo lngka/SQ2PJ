@@ -3,7 +3,7 @@
 */
 
 // Active ajax page loader
-$.ajaxLoad = true;
+$.ajaxLoad = false;
 
 //required when $.ajaxLoad = true
 $.defaultPage = 'main.html';

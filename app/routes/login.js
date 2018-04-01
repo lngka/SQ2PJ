@@ -8,6 +8,6 @@ module.exports = function(app) {
             return res.render("login");
         })
         .post(passport.authenticate("local"), function (req, res) {
-            return res.render("dashboard", {"layout": "coreUI"});
+            return res.redirect("/admincp");
         })
 }
