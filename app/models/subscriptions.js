@@ -20,7 +20,7 @@ var mySubscriptionSchema = new Schema({
         "default": false
     }
     }, {
-    "versionKey": false
+    "timestamps": true
 });
 
 module.exports = mongoose.model("Subscription", mySubscriptionSchema);
