@@ -6,7 +6,6 @@ const Schema = mongoose.Schema;
 * Model to store user objects,
 * currently represent admins
 */
-module.exports = mongoose.model("User", myUserSchema);
 var myUserSchema = new Schema({
     "username": {
         "type": String,
@@ -27,7 +26,7 @@ var myUserSchema = new Schema({
     }, {
     "timestamps": true
 });
-
+module.exports = mongoose.model("User", myUserSchema);
 
 function roleValidator(role) {
     // currently only for admins, extendable for other roles

@@ -31,7 +31,7 @@ function usersHandler(req, res) {
                 return res.status(400).send(JSON.stringify({"Message": "Username exists"}));
             } else {
                 bcrypt.hash(password, SALT_ROUNDS, function(err, hash) {
-                    if (err) {
+                    if (err)
                         return res.status(500).send(JSON.stringify({"Message": "Error generating salt to hash the password"}));
 
                     var newUser = new Users();
