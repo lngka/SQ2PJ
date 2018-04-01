@@ -18,7 +18,8 @@ module.exports = function (passport) {
             if (err)   return done(err, null);
             if (!user) return done(null, false);
 
-            UsersHandler.verifyPassword(username, password, function(err, result) {
+            var handler = new UsersHandler();
+            handler.verifyPassword(username, password, function(err, result) {
                 if (err)
                     return done(err, null);
                 if (result == false)

@@ -63,7 +63,7 @@ function usersHandler(req, res) {
             if (err)   return callback(err, null);
             if (!user) return callback(new Error("Username not found!"), null);
 
-            bcrypt.conpare(password, user.hashedPassword, function(err, result) {
+            bcrypt.compare(password, user.hashedPassword, function(err, result) {
                 if (err) return callback(err, null);
                 else return callback(null, result);
             });

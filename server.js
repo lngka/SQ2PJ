@@ -45,6 +45,7 @@ app.use(session({
 // Setting up authentication
 app.use(passport.initialize());
 app.use(passport.session());
+require(path.join(process.cwd(), "app/configurations/passport.js"))(passport);
 
 // Applying routing logic
 routes(app);
