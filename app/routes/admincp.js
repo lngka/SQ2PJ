@@ -1,6 +1,6 @@
 "use strict";
 /*
-* This route handle the admin control panel
+* This route handles the admin control panel
 */
 const path = require("path");
 
