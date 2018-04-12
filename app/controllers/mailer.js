@@ -22,6 +22,7 @@ function Mailer() {
 
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
+            console.log("Log from controllers/mailer.js: remove later");
             if (error) {
                 return console.log(error);
             }

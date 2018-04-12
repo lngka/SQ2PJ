@@ -26,11 +26,11 @@ function subscriptionsHandler(req, res) {
             if (doc) {
                 return res.status(400).send(JSON.stringify({"Message": "RZKennung exists"}));
             } else {
-                var newSub = new Subscriptions();
+                var newSub       = new Subscriptions();
                 newSub.rzkennung = rzkennung;
-                newSub.email = email;
-                newSub.daily = daily;
-                newSub.weekly = weekly;
+                newSub.email     = email;
+                newSub.daily     = daily;
+                newSub.weekly    = weekly;
 
                 newSub.save(function(err) {
                     if (err) {
@@ -39,6 +39,23 @@ function subscriptionsHandler(req, res) {
                         return res.status(200).send(JSON.stringify({"Message": "Ok"}));
                     }
                 });
+            }
+        });
+    };
+
+
+    /*
+    * find all subsciption emails
+    * @param callback {function}
+    */
+    this.getAllSubcriptionEmails = function (callback){
+        Subscriptions.find({}, "email", function(err, emails) {
+            res.setHeader("Content-Type", "application/json");
+
+            if (err) {
+                return callback(err, null);
+            } else {
+                return callback(null, emails);
             }
         });
     };

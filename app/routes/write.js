@@ -12,7 +12,7 @@ module.exports = function(app) {
         })
         .post(checkAuthentication, function(req, res, err) {
             const mailer = new Mailer();
-            mailer.sendTextTo("nvckhoa@gmail.com", req.body.subject, req.body.text);
+            mailer.sendTextTo(req.body.email, req.body.subject, req.body.text);
         })
 }
 
