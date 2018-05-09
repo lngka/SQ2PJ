@@ -16,7 +16,6 @@ module.exports = function (app) {
                 if (err) {
                     return res.status(500).send(JSON.stringify(err));
                 }
-
                 return res.status(200).send(JSON.stringify(emails));
             });
         });

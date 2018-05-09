@@ -48,13 +48,17 @@ function subscriptionsHandler(req, res) {
     * find all subsciption emails
     * @param callback {function}
     */
-    this.getAllSubcriptionEmails = function (callback){
-        Subscriptions.find({}, "email", function(err, emails) {
-            res.setHeader("Content-Type", "application/json");
-
+    this.getAllSubcriptionEmails = function (callback) {
+        Subscriptions.find({}, "email", function(err, data) {
             if (err) {
                 return callback(err, null);
             } else {
+                // extract email addresses
+                var emails = [];
+                data.forEach(function(obj) {
+                    emails.push(obj.email);
+                });
+
                 return callback(null, emails);
             }
         });

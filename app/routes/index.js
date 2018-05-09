@@ -3,14 +3,15 @@
 *each route is controlled by its own JS file
 */
 
-const path     = require("path");
-const root     = require("./root.js");
-const subscibe = require("./subscibe.js");
-const admincp  = require("./admincp.js");
-const addadmin = require("./addadmin.js");
-const login    = require("./login.js");
-const write    = require("./write.js");
-const test     = require("./test.js");
+const path        = require("path");
+const root        = require("./root.js");
+const subscibe    = require("./subscibe.js");
+const admincp     = require("./admincp.js");
+const addadmin    = require("./addadmin.js");
+const login       = require("./login.js");
+const write       = require("./write.js");
+const writeglobal = require("./writeglobal.js");
+const test        = require("./test.js");
 
 module.exports = function(app) {
     root(app);
@@ -19,5 +20,6 @@ module.exports = function(app) {
     addadmin(app);//This needs to be commented out for security reason
     login(app);
     write(app);
+    writeglobal(app);
     test(app);
 }
