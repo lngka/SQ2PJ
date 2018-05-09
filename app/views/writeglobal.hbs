@@ -1,14 +1,15 @@
 <div class="animated fadeIn">
-    QuillJS/CKEditor/TinyMCE
     <form action="/writeglobal" method="post">
         <div class="form-group">
-          <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+          <input id="#subject" type="text" class="form-control" name="subject" placeholder="Subject" required>
         </div>
 
         <div class="form-group">
-            <textarea class="form-control" name="text" id="text" rows="20"  placeholder="Message..." required></textarea>
+            <textarea id="text" class="form-control" name="text" id="text" rows="0" ></textarea>
         </div>
 
-      <button type="submit" class="btn btn-primary">Senden</button>
+      <button id="#submit" type="submit" class="btn btn-primary">Senden</button>
     </form>
 </div>
+<script src="/public/lib/tinymce/tinymce.min.js"></script>
+<script src="/public/js/writeglobal.js"></script>

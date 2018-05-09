@@ -21,10 +21,9 @@ module.exports = function(app) {
                     res.status(500).send(JSON.stringify(err));
                     return;
                 } else {
-                    console.log(emails);
+                    
                     emails.forEach(function(email) {
-
-                        mailer.sendTextTo(email, req.body.subject, req.body.text);
+                        mailer.sendHTMLTo(email, req.body.subject, req.body.text);
                     });
                     res.status(200).send("Message sent to all subscriptions");
                     return;

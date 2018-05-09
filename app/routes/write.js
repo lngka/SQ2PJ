@@ -13,10 +13,10 @@ module.exports = function(app) {
             res.render("write", {"layout": "coreUI"});
         })
         .post(checkAuthentication, function(req, res) {
-
+            console.log(req.body);
             const mailer = new Mailer();
-            mailer.sendTextTo(req.body.email, req.body.subject, req.body.text);
-            res.status(200).send("Message sent");
+            mailer.sendHTMLTo(req.body.email, req.body.subject, req.body.text);
+            res.status(200).send("HTMLMessage sent");
         })
 }
 
