@@ -21,9 +21,11 @@ module.exports = function(app) {
 }
 
 function checkAuthentication(req, res, next){
-    if(req.isAuthenticated()){
-        next();
-    } else{
-        res.redirect("/login");
-    }
+    // if(req.isAuthenticated()){
+    //     next();
+    // } else{
+    //     res.redirect("/login");
+    // }
+    console.log("WARNING: checkAuthentication in ./routewrite.js deactivated");
+    next();
 }
